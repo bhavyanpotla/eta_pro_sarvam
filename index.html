@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ETA Pro — Learn in the language you think in</title>
+  <meta name="description" content="A vernacular learning platform: read lessons in your mother tongue, tap any term for a gloss, and ask a tutor that answers in your language and refuses to invent facts." />
+  <meta name="theme-color" content="#05060a" />
+  <meta property="og:title" content="ETA Pro — Learn in the language you think in" />
+  <meta property="og:description" content="Vernacular lessons, grounded tutoring and real analytics. Runs with no API key." />
+  <meta property="og:image" content="assets/img/home.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%237c5cff'/><text x='16' y='22' font-size='16' font-family='Inter,sans-serif' font-weight='800' text-anchor='middle' fill='white'>E</text></svg>" />
+</head>
+<body>
+  <div class="aurora" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="logo" href="#top"><span class="logo-mark"></span>ETA Pro</a>
+      <div class="nav-links">
+        <a href="#problem">Why</a>
+        <a href="#features">Features</a>
+        <a href="#product">Product</a>
+        <a href="#loop">How it works</a>
+        <a href="#stack">Stack</a>
+      </div>
+      <a class="btn primary small" href="https://github.com/bhavyanpotla/cds208-vernacular-web" target="_blank" rel="noopener">View the code</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- ------------------------------------------------------------ hero -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="reveal">
+            <p class="eyebrow">CDS208 · Vernacular education platform</p>
+            <h1>Learn in the language you think in.</h1>
+            <p class="lede">
+              A student reads the lesson in their mother tongue, taps any term for an instant
+              gloss, and is tutored by an agent that answers in that language — and refuses to
+              invent facts. Every action becomes a row in an event log a teacher can read.
+            </p>
+            <div class="pills">
+              <span class="pill accent"><span class="dot"></span>Mock mode · no key needed</span>
+              <span class="pill">5 Indic languages</span>
+              <span class="pill">FastAPI + vanilla JS</span>
+            </div>
+            <div class="cta-row">
+              <a class="btn primary" href="https://github.com/bhavyanpotla/cds208-vernacular-web" target="_blank" rel="noopener">Open the live demo →</a>
+              <a class="btn" href="#product">See the product</a>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="event-card">
+              <div class="head"><span>Live event stream</span><span id="stream-dot" class="chip muted">append-only</span></div>
+              <div id="event-stream"></div>
+              <p class="muted" style="margin:0.9rem 0 0;font-size:0.78rem">
+                These are the real event names the app writes. One log, one source of truth for
+                every number on the dashboard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cursor-glow" aria-hidden="true"></div>
+    </section>
+
+    <!-- --------------------------------------------------------- marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>English</span><span>हिन्दी</span><span>বাংলা</span><span>தமிழ்</span><span>తెలుగు</span>
+        <span>English</span><span>हिन्दी</span><span>বাংলা</span><span>தமிழ்</span><span>తెలుగు</span>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------- stats -->
+    <section style="padding:3.5rem 0">
+      <div class="wrap">
+        <div class="stats">
+          <div class="stat reveal"><b data-count="5">5</b><span>Languages live</span></div>
+          <div class="stat reveal"><b data-count="4">4</b><span>Lessons shipped</span></div>
+          <div class="stat reveal"><b data-count="17">17</b><span>Glossary terms</span></div>
+          <div class="stat reveal"><b data-count="0">0</b><span>API keys required</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------- problem -->
+    <section id="problem">
+      <div class="wrap two-col">
+        <div class="reveal">
+          <p class="eyebrow">The gap is not translation</p>
+          <h2>Students are taught in a language they do not speak at home.</h2>
+          <p class="lede">
+            Translation tools translate a sentence. They do not know which lesson you are on,
+            what you got wrong, or what to give you next. The language gap sits between the
+            student and the whole learning loop — reading, asking, being assessed.
+          </p>
+          <div class="figure-row">
+            <div class="figure">
+              <b data-count="40" data-suffix="%">40%</b>
+              <p>of learners worldwide are not taught in a language they speak fluently. In some
+                low- and middle-income countries it rises to 90%. (UNESCO GEM, 2025)</p>
+            </div>
+            <div class="figure">
+              <b data-count="76" data-suffix="%">76%</b>
+              <p>of Class 3 students in Indian government schools could not read a Class 2 level
+                text. (ASER 2024)</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="card" data-tilt>
+            <div class="icon">◎</div>
+            <h3>One loop, five surfaces</h3>
+            <p style="margin-bottom:1rem">
+              Read → tap → ask → assess → measure. Every step is instrumented, so nothing is
+              reconstructed after the fact.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+              <span class="chip">reader</span>
+              <span class="chip">gloss</span>
+              <span class="chip">tutor</span>
+              <span class="chip">quiz</span>
+              <span class="chip">analytics</span>
+            </div>
+          </div>
+          <div class="card" data-tilt style="margin-top:1rem">
+            <div class="icon">✓</div>
+            <h3>The device is not the barrier</h3>
+            <p>
+              84% of rural Indian households now have a smartphone. The layer that is missing is
+              the language layer — not the hardware.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------------------------------------------- features -->
+    <section id="features">
+      <div class="wrap">
+        <div class="reveal" style="max-width:640px;margin-bottom:2.5rem">
+          <p class="eyebrow">What it does</p>
+          <h2>Built to be honest about what it does not know.</h2>
+          <p class="lede">
+            The interesting part of this project is not that it translates. It is that every
+            surface tells the truth about its own state — mock or live, authored or translated,
+            grounded or outside the lesson.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="card reveal" data-tilt>
+            <div class="icon">01</div>
+            <h3>Mother-tongue reader</h3>
+            <p>Lesson segments render in the learner's script. Every key term is a button that
+              glosses in place, labelled <em>authored</em> or <em>translated</em>.</p>
+          </div>
+          <div class="card reveal" data-tilt>
+            <div class="icon">02</div>
+            <h3>Grounded tutor</h3>
+            <p>Answers come from the segment you are reading. Ask something the lesson does not
+              cover and it refuses, in your language, then gives one hint.</p>
+          </div>
+          <div class="card reveal" data-tilt>
+            <div class="icon">03</div>
+            <h3>Honest translation</h3>
+            <p>One cached service behind every surface. Provider, latency and cache state are
+              shown, never implied. A mock result is labelled as a mock result.</p>
+          </div>
+          <div class="card reveal" data-tilt>
+            <div class="icon">04</div>
+            <h3>Rule-first recommender</h3>
+            <p>Failed a quiz? Revisit that lesson at easy difficulty. The model may phrase the
+              reason; it never gets to pick an id outside the catalogue.</p>
+          </div>
+          <div class="card reveal" data-tilt>
+            <div class="icon">05</div>
+            <h3>Analytics that trace back</h3>
+            <p>Every visual on the dashboard maps to events a student generated. A coverage audit
+              names the documented events that have never fired.</p>
+          </div>
+          <div class="card reveal" data-tilt>
+            <div class="icon">06</div>
+            <h3>Runs with no key</h3>
+            <p>No API key, no internet, no problem. Every AI path degrades to a labelled offline
+              mock — so a demo cannot be broken by venue Wi-Fi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------- product -->
+    <section id="product">
+      <div class="wrap">
+        <div class="reveal" style="max-width:640px;margin-bottom:1.8rem">
+          <p class="eyebrow">The product</p>
+          <h2>A real app, not a mockup.</h2>
+          <p class="lede">
+            These are screenshots of the running application, taken from the deployed build.
+            Switch the tabs.
+          </p>
+        </div>
+        <div class="tabs reveal" role="tablist" aria-label="Product screens">
+          <button role="tab" aria-selected="true" data-src="assets/img/learn.jpg" data-alt="Lesson reader with tap-to-translate glosses">Learn</button>
+          <button role="tab" aria-selected="false" data-src="assets/img/tutor.jpg" data-alt="Grounded tutor refusing an off-lesson question">Tutor</button>
+          <button role="tab" aria-selected="false" data-src="assets/img/translate.jpg" data-alt="Two-panel translation workspace">Translate</button>
+          <button role="tab" aria-selected="false" data-src="assets/img/analytics.jpg" data-alt="Analytics dashboard reading the event log">Analytics</button>
+        </div>
+        <div class="browser reveal">
+          <div class="browser-bar">
+            <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+            <span class="url">eta-pro.local / learn</span>
+          </div>
+          <img id="product-shot" class="shot" src="assets/img/learn.jpg"
+               alt="Lesson reader with tap-to-translate glosses" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------ loop -->
+    <section id="loop">
+      <div class="wrap">
+        <div class="reveal" style="max-width:640px;margin-bottom:2.5rem">
+          <p class="eyebrow">How it works</p>
+          <h2>Three steps, one measurable loop.</h2>
+        </div>
+        <div class="loop">
+          <div class="step reveal">
+            <b>01</b>
+            <h3>Pick your language</h3>
+            <p>Five Indic languages, done properly. The whole interface follows — nav, lessons,
+              glosses, tutor replies, quiz feedback.</p>
+          </div>
+          <div class="step reveal">
+            <b>02</b>
+            <h3>Read and tap</h3>
+            <p>Content authored in English and Hindi; Tamil, Telugu and Bengali are filled by the
+              translation service on first read and cached.</p>
+          </div>
+          <div class="step reveal">
+            <b>03</b>
+            <h3>Ask and be assessed</h3>
+            <p>A grounded tutor, a quiz that logs a real score, and a recommender that explains
+              itself in the learner's language.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------- stack -->
+    <section id="stack">
+      <div class="wrap">
+        <div class="two-col">
+          <div class="reveal">
+            <p class="eyebrow">Under the hood</p>
+            <h2>The services are framework-free. The front end was replaced once, and the brain did not change.</h2>
+            <p class="lede">
+              Translation, lessons, quizzes, the tutor, the recommender and the export pipeline are
+              plain Python — plain arguments in, plain dicts out. FastAPI exposes them as JSON, and
+              the frontend is static files served by the same process: no bundler, no CORS, one
+              command to run.
+            </p>
+          </div>
+          <div class="reveal grid-2">
+            <div class="card"><h3>FastAPI</h3><p>14 endpoints, OpenAPI docs at <code>/docs</code>.</p></div>
+            <div class="card"><h3>SQLite → Postgres</h3><p>The swap is one file: <code>core/db.py</code>.</p></div>
+            <div class="card"><h3>Sarvam AI</h3><p>mayura:v1 for translation, sarvam-m for chat.</p></div>
+            <div class="card"><h3>Power BI</h3><p>Four CSVs plus a health file, on demand.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------- cta -->
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div>
+            <h2>Bring your own lesson. Watch the dashboard fill.</h2>
+            <p class="muted" style="margin:0">Runs with no API key and no internet. Mock results are labelled, never disguised.</p>
+          </div>
+          <a class="btn primary" href="https://github.com/bhavyanpotla/cds208-vernacular-web" target="_blank" rel="noopener">Open the live demo →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-grid">
+      <div>
+        <a class="logo" href="#top" style="margin-bottom:0.8rem"><span class="logo-mark"></span>ETA Pro</a>
+        <p style="margin:0;max-width:42ch">
+          CDS208 final project. FastAPI, vanilla HTML/CSS/JS, Sarvam AI with an offline mock.
+          Statistics: UNESCO Global Education Monitoring Report 2025; ASER 2024.
+        </p>
+      </div>
+      <div class="foot-links">
+        <a href="https://github.com/bhavyanpotla/cds208-vernacular-web" target="_blank" rel="noopener">Application repo</a>
+        <a href="https://github.com/bhavyanpotla/cds208-vernacular-web/blob/main/docs/powerbi.md" target="_blank" rel="noopener">Power BI model</a>
+        <a href="https://github.com/bhavyanpotla/cds208-vernacular-edu" target="_blank" rel="noopener">Streamlit build</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
