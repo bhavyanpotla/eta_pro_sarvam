@@ -677,6 +677,63 @@ footer {
 
 .foot-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 
+/* -------------------------------------------------------- motion layer */
+
+/* scroll progress */
+.progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  z-index: 60;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 14px rgba(124, 92, 255, 0.8);
+}
+
+/* masked headline reveal: the words rise out of a clipping edge */
+.h1-mask { overflow: hidden; padding-bottom: 0.12em; }
+
+.split-word { display: inline-block; overflow: hidden; vertical-align: top; }
+.split-inner { display: inline-block; will-change: transform; }
+
+/* pinned horizontal gallery */
+.pin-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2rem 0 2.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pin-wrap::-webkit-scrollbar { display: none; }
+
+.pin-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding-left: max(1.5rem, calc((100vw - var(--max)) / 2));
+  padding-right: max(1.5rem, calc((100vw - var(--max)) / 2));
+  will-change: transform;
+}
+
+.pin-panel { flex: 0 0 min(860px, 84vw); }
+
+.panel-cap {
+  margin: 0.9rem 0 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+/* the wrapper keeps its own scrollbar unless the pin actually engaged */
+body.pinned .pin-wrap { overflow: visible; }
+
+/* magnetic buttons */
+[data-magnetic] { transition: transform 0.35s var(--ease); will-change: transform; }
+
 /* ------------------------------------------------------------- reveal */
 
 .reveal {

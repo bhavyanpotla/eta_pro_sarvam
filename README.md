@@ -55,17 +55,41 @@ Contrast is AA at every size (ink 17:1, body 11:1, muted 7:1 on the canvas).
 
 ## Motion
 
-All of it is progressive and opt-out:
+Two layers, deliberately separated.
 
-- **Scroll reveal** — `IntersectionObserver`, staggered by 70 ms, unobserved after firing.
-- **Count-up** — figures animate once when they enter the viewport.
-- **3D tilt** — pointer-tracked `rotateX/rotateY` plus a radial sheen on the feature cards.
-- **Parallax** — background blobs drift with the cursor, damped.
-- **Event stream** — cycles real event names every 2.6 s.
-- **Tabs** — product screenshots swap with a fade.
+**`assets/js/main.js` — the baseline, zero dependencies.** Scroll reveal via
+`IntersectionObserver` (staggered 70 ms), count-up figures, pointer-tracked 3D tilt
+with a radial sheen, damped blob parallax, cursor glow, the cycling event stream.
+This is what every visitor gets, and it is what still works if a CDN is blocked.
 
-With JavaScript disabled the page is fully readable. Under
-`prefers-reduced-motion: reduce` every animation and transition is off.
+**`assets/js/motion.js` — the premium layer, GSAP + ScrollTrigger + Lenis.**
+It bails out on the first line if the libraries did not load or the user prefers
+reduced motion. When it does run it adds:
+
+| Technique | Where |
+|---|---|
+| Inertial scrolling (Lenis) wired into ScrollTrigger's ticker | whole page |
+| Masked headline reveal — the h1 rises out of a clipping edge | hero |
+| Per-word reveal, staggered 45 ms | every `h2[data-split]` |
+| Pinned horizontal gallery driven by vertical scroll | the product section |
+| Layered parallax (hero card, figures, cards) | throughout |
+| Magnetic CTAs — the button leans toward the cursor, snaps back on leave | primary buttons |
+| Scroll progress bar | top of the viewport |
+
+Three safety rules are baked in, because motion that breaks content is worse than no
+motion:
+
+1. **A watchdog.** If the animation ticker never advances — background tab, throttled
+   rAF, a very slow device — the hero is forced to its final state after 2.6 s. Content
+   always wins over choreography.
+2. **The pin can fail without taking the gallery with it.** The native horizontal
+   scrollbar on `.pin-wrap` is only removed *after* the ScrollTrigger pin is created
+   successfully; if pinning throws, the wrapper keeps its own scrollbar and every panel
+   stays reachable.
+3. **`prefers-reduced-motion: reduce`** turns the whole layer off before it starts.
+
+With JavaScript disabled the page is fully readable — the reveals are CSS-visible
+without the `.js` class.
 
 ## Structure
 

@@ -15,6 +15,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%237c5cff'/><text x='16' y='22' font-size='16' font-family='Inter,sans-serif' font-weight='800' text-anchor='middle' fill='white'>E</text></svg>" />
 </head>
 <body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="aurora" aria-hidden="true">
     <span class="blob blob-1"></span>
     <span class="blob blob-2"></span>
@@ -42,7 +43,7 @@
         <div class="hero-grid">
           <div class="reveal">
             <p class="eyebrow">CDS208 · Vernacular education platform</p>
-            <h1>Learn in the language you think in.</h1>
+            <div class="h1-mask"><h1 id="hero-title">Learn in the language you think in.</h1></div>
             <p class="lede">
               A student reads the lesson in their mother tongue, taps any term for an instant
               gloss, and is tutored by an agent that answers in that language — and refuses to
@@ -54,7 +55,7 @@
               <span class="pill">FastAPI + vanilla JS</span>
             </div>
             <div class="cta-row">
-              <a class="btn primary" href="https://github.com/bhavyanpotla/cds208-vernacular-web" target="_blank" rel="noopener">Open the live demo →</a>
+              <a class="btn primary" data-magnetic href="https://github.com/bhavyanpotla/cds208-vernacular-web" target="_blank" rel="noopener">Open the live demo →</a>
               <a class="btn" href="#product">See the product</a>
             </div>
           </div>
@@ -99,7 +100,7 @@
       <div class="wrap two-col">
         <div class="reveal">
           <p class="eyebrow">The gap is not translation</p>
-          <h2>Students are taught in a language they do not speak at home.</h2>
+          <h2 data-split>Students are taught in a language they do not speak at home.</h2>
           <p class="lede">
             Translation tools translate a sentence. They do not know which lesson you are on,
             what you got wrong, or what to give you next. The language gap sits between the
@@ -151,7 +152,7 @@
       <div class="wrap">
         <div class="reveal" style="max-width:640px;margin-bottom:2.5rem">
           <p class="eyebrow">What it does</p>
-          <h2>Built to be honest about what it does not know.</h2>
+          <h2 data-split>Built to be honest about what it does not know.</h2>
           <p class="lede">
             The interesting part of this project is not that it translates. It is that every
             surface tells the truth about its own state — mock or live, authored or translated,
@@ -210,19 +211,39 @@
             Switch the tabs.
           </p>
         </div>
-        <div class="tabs reveal" role="tablist" aria-label="Product screens">
-          <button role="tab" aria-selected="true" data-src="assets/img/learn.jpg" data-alt="Lesson reader with tap-to-translate glosses">Learn</button>
-          <button role="tab" aria-selected="false" data-src="assets/img/tutor.jpg" data-alt="Grounded tutor refusing an off-lesson question">Tutor</button>
-          <button role="tab" aria-selected="false" data-src="assets/img/translate.jpg" data-alt="Two-panel translation workspace">Translate</button>
-          <button role="tab" aria-selected="false" data-src="assets/img/analytics.jpg" data-alt="Analytics dashboard reading the event log">Analytics</button>
-        </div>
-        <div class="browser reveal">
-          <div class="browser-bar">
-            <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-            <span class="url">eta-pro.local / learn</span>
-          </div>
-          <img id="product-shot" class="shot" src="assets/img/learn.jpg"
-               alt="Lesson reader with tap-to-translate glosses" loading="lazy" />
+        <p class="lede reveal">Four screens from the running application. Scroll — the panels move sideways.</p>
+      </div>
+
+      <div class="pin-wrap">
+        <div class="pin-track" id="pin-track">
+          <article class="pin-panel">
+            <div class="browser">
+              <div class="browser-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="url">eta-pro.local / learn</span></div>
+              <img class="shot" src="assets/img/learn.jpg" alt="Lesson reader with tap-to-translate glosses" loading="lazy" />
+            </div>
+            <p class="panel-cap"><span class="chip">01 · reader</span> Segments in the learner's script; every key term glosses in place.</p>
+          </article>
+          <article class="pin-panel">
+            <div class="browser">
+              <div class="browser-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="url">eta-pro.local / tutor</span></div>
+              <img class="shot" src="assets/img/tutor.jpg" alt="Grounded tutor refusing an off-lesson question" loading="lazy" />
+            </div>
+            <p class="panel-cap"><span class="chip warn">02 · tutor</span> Ask something the lesson does not cover — it refuses, in your language.</p>
+          </article>
+          <article class="pin-panel">
+            <div class="browser">
+              <div class="browser-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="url">eta-pro.local / translate</span></div>
+              <img class="shot" src="assets/img/translate.jpg" alt="Two-panel translation workspace" loading="lazy" />
+            </div>
+            <p class="panel-cap"><span class="chip">03 · translate</span> One cached service; provider, latency and cache state shown.</p>
+          </article>
+          <article class="pin-panel">
+            <div class="browser">
+              <div class="browser-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="url">eta-pro.local / analytics</span></div>
+              <img class="shot" src="assets/img/analytics.jpg" alt="Analytics dashboard reading the event log" loading="lazy" />
+            </div>
+            <p class="panel-cap"><span class="chip ok">04 · analytics</span> Every visual traces to events a student generated.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -232,7 +253,7 @@
       <div class="wrap">
         <div class="reveal" style="max-width:640px;margin-bottom:2.5rem">
           <p class="eyebrow">How it works</p>
-          <h2>Three steps, one measurable loop.</h2>
+          <h2 data-split>Three steps, one measurable loop.</h2>
         </div>
         <div class="loop">
           <div class="step reveal">
@@ -263,7 +284,7 @@
         <div class="two-col">
           <div class="reveal">
             <p class="eyebrow">Under the hood</p>
-            <h2>The services are framework-free. The front end was replaced once, and the brain did not change.</h2>
+            <h2 data-split>The services are framework-free. The front end was replaced once, and the brain did not change.</h2>
             <p class="lede">
               Translation, lessons, quizzes, the tutor, the recommender and the export pipeline are
               plain Python — plain arguments in, plain dicts out. FastAPI exposes them as JSON, and
@@ -289,7 +310,7 @@
             <h2>Bring your own lesson. Watch the dashboard fill.</h2>
             <p class="muted" style="margin:0">Runs with no API key and no internet. Mock results are labelled, never disguised.</p>
           </div>
-          <a class="btn primary" href="https://github.com/bhavyanpotla/cds208-vernacular-web" target="_blank" rel="noopener">Open the live demo →</a>
+          <a class="btn primary" data-magnetic href="https://github.com/bhavyanpotla/cds208-vernacular-web" target="_blank" rel="noopener">Open the live demo →</a>
         </div>
       </div>
     </section>
@@ -312,6 +333,10 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
 </body>
 </html>

@@ -152,25 +152,6 @@
     }, 2600);
   };
 
-  /* ---------------------------------------------------------------- tabs */
-
-  const tabs = () => {
-    const buttons = $$(".tabs button");
-    const shot = $("#product-shot");
-    if (!buttons.length || !shot) return;
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        buttons.forEach((b) => b.setAttribute("aria-selected", String(b === button)));
-        shot.classList.add("swapping");
-        setTimeout(() => {
-          shot.src = button.dataset.src;
-          shot.alt = button.dataset.alt || "";
-          shot.classList.remove("swapping");
-        }, 180);
-      });
-    });
-  };
-
   /* ----------------------------------------------------------------- nav */
 
   const navShadow = () => {
@@ -188,6 +169,5 @@
   tilt();
   parallax();
   stream();
-  tabs();
   navShadow();
 })();
